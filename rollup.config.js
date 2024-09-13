@@ -4,8 +4,6 @@ export default {
   input: './index.mjs',
   output: {
     file: 'index.min.js',
-    format: 'umd',
-    name: 'bundle',
     plugins: [terser()],
   },
   plugins: [],

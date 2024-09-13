@@ -1,3 +1,4 @@
+/// <reference types="./types/index.d.ts" />
 // Copyright @ 2024-present xiejiahe. All rights reserved. MIT license.
 // See https://github.com/xjh22222228/class-scroll
 
@@ -54,7 +55,7 @@ ClassScroll.prototype.init = function () {
     const el =
       typeof item.el === 'object' ? item.el : document.querySelector(item.el);
     if (el) {
-      intersectionObserver.observe(item.el);
+      intersectionObserver.observe(el);
       this.observers.push(intersectionObserver);
     }
   }

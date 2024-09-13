@@ -1,2 +1,7 @@
 dist/
 .github/
+.prettierrc.cjs
+demo.html
+demo.js
+rollup.config.js
+webpack.config.mjs

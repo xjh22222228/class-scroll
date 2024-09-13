@@ -1,5 +1,5 @@
 interface ClassScrollProps {
-  el: Node | string;
+  el: Element | string;
   forwards?: boolean | undefined;
   className: string;
   delay?: number | undefined;
@@ -8,6 +8,12 @@ interface ClassScrollProps {
   threshold?: number | number[];
 }
 
-declare function ClassScrollProps(targets: ClassScrollProps[]): void;
+declare class ClassScroll {
+  constructor(targets: ClassScrollProps[]);
 
-export default ClassScrollProps;
+  init();
+  destroy();
+  disconnect();
+}
+
+export default ClassScroll;
