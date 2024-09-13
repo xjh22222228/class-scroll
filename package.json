@@ -1,0 +1,33 @@
+{
+  "name": "class-scroll",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xjh22222228/class-scroll.git"
+  },
+  "homepage": "https://github.com/xjh22222228/class-scroll#readme",
+  "description": "Scroll visible elements to add CSS",
+  "type": "module",
+  "typings": "types/index.d.ts",
+  "main": "index.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "webpack-dev-server --port 7001 --mode development",
+    "build-webpack": "webpack"
+  },
+  "author": "xiejiahe",
+  "license": "MIT",
+  "keywords": [
+    "scrollcss"
+  ],
+  "dependencies": {
+    "rollup": "^4.21.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
