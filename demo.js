@@ -15,29 +15,54 @@ window.onload = () => {
     el: '#app',
     data: {
       array: [],
+      classScroll: null,
     },
     created() {
-      for (var i = 0; i < 200; i++) {
-        this.array.push({
-          index: i,
-          height: random(),
-          background: randomColor(),
-        });
+      for (var i = 0; i < 6; i++) {
+        const paylaod = {
+          items: [],
+        };
+        for (var j = 0; j < 30; j++) {
+          paylaod.items.push({
+            index: j,
+            height: random(),
+            background: randomColor(),
+          });
+        }
+        this.array.push(paylaod);
       }
 
       this.$nextTick(() => {
-        const els = document.querySelectorAll('.item');
+        this.init();
+      });
+    },
+
+    methods: {
+      // Core code
+      init() {
+        const els = document.querySelectorAll('.bg');
         const params = [];
         els.forEach((el, i) => {
           params.push({
             el: el,
-            forwards: true,
-            className: 'animate__animated animate__fadeIn',
+            className: 'animate__animated animate__fadeInUp',
+            forwards: false,
+            threshold: [0, 0.5, 1],
+            onVisible(e) {
+              console.log('onVisible', e);
+            },
+            onHidden(e) {},
           });
         });
-        const data = new ScrollObserver(params);
-        data.init();
-      });
+        this.classScroll = new ScrollObserver(params);
+        this.classScroll.init();
+      },
+
+      handleDestroy() {
+        if (this.classScroll) {
+          this.classScroll.destroy();
+        }
+      },
     },
   });
 };

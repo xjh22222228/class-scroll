@@ -7,17 +7,16 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
+      html-webpack-plugin:
+        specifier: ^5.6.0
+        version: 5.6.0(webpack@5.94.0(webpack-cli@5.1.4))
       rollup:
         specifier: ^4.21.1
         version: 4.21.1
       rollup-plugin-terser:
         specifier: ^7.0.2
         version: 7.0.2(rollup@4.21.1)
-    devDependencies:
-      html-webpack-plugin:
-        specifier: ^5.6.0
-        version: 5.6.0(webpack@5.94.0(webpack-cli@5.1.4))
       webpack:
         specifier: ^5.94.0
         version: 5.94.0(webpack-cli@5.1.4)

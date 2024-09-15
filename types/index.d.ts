@@ -1,11 +1,14 @@
 interface ClassScrollProps {
   el: Element | string;
-  forwards?: boolean | undefined;
   className: string;
   delay?: number | undefined;
   root?: Element | Document | null;
   rootMargin?: string;
   threshold?: number | number[];
+
+  // callback
+  onVisible?(entries: IntersectionObserverEntry[]): void;
+  onHidden?(entries: IntersectionObserverEntry[]): void;
 }
 
 declare class ClassScroll {
